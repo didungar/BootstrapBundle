@@ -1,0 +1,19 @@
+{
+    "name": "DidUngar/BootstrapBundle",
+    "type": "library",
+    "description": "Bundle for fast install and maintening of BootstrapBundle in SF.",
+    "authors": [
+        {
+            "name": "Didier Ungar",
+            "email": "didungar@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["/"]
+    },
+    "extra": {
+        "branch-alias": {
+            "master": "1.0.0"
+        }
+    }
+}
