@@ -23,7 +23,9 @@
 	{% block sidebar %}
 	<nav id="navbar" class="navbar navbar-inverse"><div class="container-fluid"><div class="navbar-header">
                 <ul class="nav navbar-nav">
-			<li><a href="/">Home</a></li>
+			{% block sidebar_items %}
+				<li><a href="/">Home</a></li>
+        		{% endblock %}
                 </ul>
         </div></div></nav>
         {% endblock %}
