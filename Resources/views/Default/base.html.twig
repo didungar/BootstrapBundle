@@ -30,28 +30,23 @@
 		{% block sidebar_end %}{% endblock %}
         </div></div></nav>
         {% endblock %}
-	{% block flash %}
-        {# On affiche tous les messages flash #}
-        {% if app.session.hasFlash('info')  %}
-            {% set message = app.session.getflash('info') %}
-            <p>{{ message }}</p>
-        {% endif %}
-        {% if app.session.hasFlash('notice')  %}
-            {% set message = app.session.getflash('notice') %}
-            <p>{{ message }}</p>
-        {% endif %}
-        {% if app.session.hasFlash('warning')  %}
-            {% set message = app.session.getflash('warning') %}
-            <p>{{ message }}</p>
-        {% endif %}
-        {% if app.session.hasFlash('error')  %}
-            {% set message = app.session.getflash('error') %}
-            <p>{{ message }}</p>
-        {% endif %}
-        {% if app.session.hasFlash('success')  %}
-            {% set message = app.session.getflash('success') %}
-            <p>{{ message }}</p>
-        {% endif %}
+        {% block flash %}
+            {# On affiche tous les messages flash #}
+            {% for message in app.session.flashbag.get('info')  %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('notice')  %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('warning')  %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('error')  %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('success')  %}
+                <p>{{ message }}</p>
+            {% endfor %}
         {% endblock %}
 
         <section id="content">
