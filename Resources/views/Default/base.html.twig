@@ -35,19 +35,19 @@
 		{% block flash %}
 			{# On affiche tous les messages flash #}
 			{% for message in app.session.flashbag.get('info')  %}
-				<p>{{ message }}</p>
+				<div class="alert alert-info" role="alert">{{ message }}</div>
 			{% endfor %}
 			{% for message in app.session.flashbag.get('notice')  %}
-				<p>{{ message }}</p>
+				<div class="alert alert-info" role="alert">{{ message }}</div>
 			{% endfor %}
 			{% for message in app.session.flashbag.get('warning')  %}
-				<p>{{ message }}</p>
+				<div class="alert alert-warning" role="alert">{{ message }}</div>
 			{% endfor %}
 			{% for message in app.session.flashbag.get('error')  %}
-				<p>{{ message }}</p>
+				<div class="alert alert-danger" role="alert">{{ message }}</div>
 			{% endfor %}
 			{% for message in app.session.flashbag.get('success')  %}
-				<p>{{ message }}</p>
+				<div class="alert alert-success" role="alert">{{ message }}</div>
 			{% endfor %}
 		{% endblock %}
 
