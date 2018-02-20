@@ -23,14 +23,27 @@
 	</head>
 	<body ng-controller="ngCtrl">
 		{% block sidebar %}
-			<nav id="navbar" class="navbar navbar-inverse"><div class="container-fluid"><div class="navbar-header">
-				<ul class="nav navbar-nav">
-				{% block sidebar_items %}
-					<li><a href="/">Home</a></li>
-				{% endblock %}
-				</ul>
-			{% block sidebar_end %}{% endblock %}
-			</div></div></nav>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">{% block projectname %}DidUngar/BootstrapBundle{% endblock %}</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+						{% block sidebar_items %}
+							<li><a href="/">Home</a></li>
+						{% endblock %}
+						</ul>
+					{% block sidebar_end %}{% endblock %}
+					</div>
+				</div>
+			</nav>
 		{% endblock %}
 		{% block flash %}
 			{# On affiche tous les messages flash #}
