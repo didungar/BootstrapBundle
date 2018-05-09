@@ -15,5 +15,8 @@
         "branch-alias": {
             "dev-master": "1.0.0"
         }
+    },
+    "require": {
+        "twig/twig": "^2.4"
     }
 }

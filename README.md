@@ -1,10 +1,23 @@
-# DidUngar/BoostrapBundle
+# DidUngar/BootstrapBundle
 ## Setup :
+
+Adding to project :
+```
+composer require "DidUngar/BootstrapBundle":"dev-master"
+```
 
 To install the Bundle it is enough that the basic tpl extend of the desired version
 
+Edit app/AppKernel.php for adding the bundle :
+```
+new DidUngar\BootstrapBundle\DidUngarBootstrapBundle(),
+```
+
 Please edit this file : /www/api.list/app/Resources/views/base.html.twig like this :
 ```
+{# SF version > 3 #}
+{% extends '@DidUngarBootstrap/Default/base.html.twig' %}
+{# SF version < 3 #}
 {% extends 'DidUngarBootstrapBundle:Default:base.html.twig' %}
 
 {% block title %}Title of site{% endblock %}
