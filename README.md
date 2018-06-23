@@ -1,9 +1,19 @@
 # DidUngar/BootstrapBundle
 ## Setup :
 
+Adding to composer.json :
+```
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:didungar/BootstrapBundle.git"
+        }
+    ],
+```
+
 Adding to project :
 ```
-composer require "DidUngar/BootstrapBundle":"dev-master"
+composer require "DidUngar/BootstrapBundle"
 ```
 
 To install the Bundle it is enough that the basic tpl extend of the desired version
