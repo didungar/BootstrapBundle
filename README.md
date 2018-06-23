@@ -23,7 +23,12 @@ Edit app/AppKernel.php for adding the bundle :
 new DidUngar\BootstrapBundle\DidUngarBootstrapBundle(),
 ```
 
-Please edit this file : /www/api.list/app/Resources/views/base.html.twig like this :
+Please edit this file :
+```
+/www/your_project/app/Resources/views/base.html.twig
+```
+For Symfony >4, use file : /www/your_project/templates/base.html.twig
+like this :
 ```
 {# SF version > 3 #}
 {% extends '@DidUngarBootstrap/Default/base.html.twig' %}

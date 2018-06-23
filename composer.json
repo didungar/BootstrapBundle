@@ -9,7 +9,9 @@
         }
     ],
     "autoload": {
-        "classmap": ["/"]
+        "psr-4": {
+            "DidUngarBootstrapBundle\\": "/"
+        }
     },
     "extra": {
         "branch-alias": {
@@ -17,6 +19,7 @@
         }
     },
     "require": {
-        "twig/twig": "^2.4"
+        "twig/twig": "^2.4",
+        "symfony/twig-bundle": "^4.1"
     }
 }
