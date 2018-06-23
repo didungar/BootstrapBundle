@@ -54,3 +54,10 @@ like this :
 <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
 {% endblock %}
 ```
+
+Ajouter 
+twig:
+    paths:
+       - '%kernel.project_dir%/templates'
+       - '%kernel.project_dir%/vendor/DidUngar/BootstrapBundle/Resources/views/'
+
