@@ -1,6 +1,6 @@
 <?php
 
-namespace DidUngar\BootstrapBundle;
+namespace DidUngarBootstrapBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

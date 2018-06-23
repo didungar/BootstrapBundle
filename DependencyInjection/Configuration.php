@@ -1,6 +1,6 @@
 <?php
 
-namespace DidUngar\BootstrapBundle\DependencyInjection;
+namespace DidUngarBootstrapBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace DidUngar\BootstrapBundle\DependencyInjection;
+namespace DidUngarBootstrapBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
