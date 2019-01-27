@@ -54,10 +54,17 @@ like this :
 <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
 {% endblock %}
 ```
-
-Ajouter 
+### Debug :
+Si le PR n'est pas bien pris en compte (SF4) vous pouvez modifier la configuration de twig
+```
 twig:
     paths:
-       - '%kernel.project_dir%/templates'
-       - '%kernel.project_dir%/vendor/DidUngar/BootstrapBundle/Resources/views/'
+        - '%kernel.project_dir%/templates'
+        - '%kernel.project_dir%/vendor/DidUngar/BootstrapBundle/templates'
+```
+Avec comme base :
+```
+{% extends 'Default/base.html.twig' %}
+```
+
 

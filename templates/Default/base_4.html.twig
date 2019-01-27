@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+	<head>
+	{% block head %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block title %}DidUngar/BootstrapBundle{% endblock %}</title>
+
+        <!-- SPELLS -->
+        {% block stylesheets %}
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <style>
+            #content{ padding:0 25px 0 25px; }
+            </style>
+        {% endblock %}
+        <!-- SCROLLS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{% endblock %}
+	</head>
+	<body class="bootstrap_4">
+		{% block sidebar %}
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="{{ path('home') }}">{% block projectname %}DidUngar/BootstrapBundle{% endblock %}</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						{% block sidebar_items %}
+							<li class="nav-item">
+								<a href="{{ path('home') }}" class="nav-link{% if 'home' == app.request.get('_route') %} active{% endif %}">Home</a>
+							</li>
+						{% endblock %}
+						{% block sidebar_end %}{% endblock %}
+					</ul>
+					{#
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+					#}
+				</div>
+			</nav>
+		{% endblock %}
+		{% block flash %}
+			{# On affiche tous les messages flash #}
+			{% for message in app.session.flashbag.get('primary')  %}
+				<div class="alert alert-primary" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('secondary')  %}
+				<div class="alert alert-secondary" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('success')  %}
+				<div class="alert alert-success" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('danger')  %}
+				<div class="alert alert-danger" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('warning')  %}
+				<div class="alert alert-warning" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('info')  %}
+				<div class="alert alert-info" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('light')  %}
+				<div class="alert alert-light" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('dark')  %}
+				<div class="alert alert-dark" role="alert">{{ message }}</div>
+			{% endfor %}
+		{% endblock %}
+
+        <section id="content">
+            {% block body %}{% endblock %}
+        </section>
+        <section id="footer">
+            {% block footer %}{% endblock %}
+        </section>
+		{% block javascripts %}
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        {% endblock %}
+	</body>
+</html>
