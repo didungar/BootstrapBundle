@@ -20,7 +20,13 @@ To install the Bundle it is enough that the basic tpl extend of the desired vers
 
 Edit app/AppKernel.php for adding the bundle :
 ```
+{# SF version < 4 #}
 new DidUngar\BootstrapBundle\DidUngarBootstrapBundle(),
+```
+Edit config/bundles.php for adding the bundle :
+```
+{# SF version >= 4 #}
+DidUngarBootstrapBundle\DidUngarBootstrapBundle::class => ['all' => true],
 ```
 
 Please edit this file :
@@ -57,10 +63,18 @@ like this :
 ### Debug :
 Si le PR n'est pas bien pris en compte (SF4) vous pouvez modifier la configuration de twig
 ```
+{# SF version < 4 #}
 twig:
     paths:
         - '%kernel.project_dir%/templates'
         - '%kernel.project_dir%/vendor/DidUngar/BootstrapBundle/templates'
+{# SF version >= 4 #}
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    paths:
+        '%kernel.project_dir%/vendor/DidUngar/BootstrapBundle/templates' : DidUngarBootstrap
 ```
 Avec comme base :
 ```
