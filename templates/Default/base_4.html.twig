@@ -58,6 +58,9 @@
 			{% for message in app.session.flashbag.get('success')  %}
 				<div class="alert alert-success" role="alert">{{ message }}</div>
 			{% endfor %}
+			{% for message in app.session.flashbag.get('error')  %}
+				<div class="alert alert-danger" role="alert">{{ message }}</div>
+			{% endfor %}
 			{% for message in app.session.flashbag.get('danger')  %}
 				<div class="alert alert-danger" role="alert">{{ message }}</div>
 			{% endfor %}
@@ -66,6 +69,9 @@
 			{% endfor %}
 			{% for message in app.session.flashbag.get('info')  %}
 				<div class="alert alert-info" role="alert">{{ message }}</div>
+			{% endfor %}
+			{% for message in app.session.flashbag.get('notice')  %}
+				<div class="alert alert-light" role="alert">{{ message }}</div>
 			{% endfor %}
 			{% for message in app.session.flashbag.get('light')  %}
 				<div class="alert alert-light" role="alert">{{ message }}</div>
