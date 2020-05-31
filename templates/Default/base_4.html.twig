@@ -82,7 +82,9 @@
 		{% endblock %}
 
         <section id="content">
-            {% block body %}{% endblock %}
+			{% block body_before %}{% endblock %}
+			{% block body %}{% endblock %}
+			{% block body_after %}{% endblock %}
         </section>
         <section id="footer">
             {% block footer %}{% endblock %}
